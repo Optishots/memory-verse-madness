@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiShots Games 🎮✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #319795;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-size: 3em;
+            color: #2d7878;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .games-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2d7878;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 30px;
+            border: 3px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: #319795;
+        }
+
+        .game-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .game-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #2d7878;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            color: #4a5568;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .game-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .game-features li {
+            background: #bee3f8;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+
+        .play-btn {
+            background: #319795;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .play-btn:hover {
+            background: #2d7878;
+            transform: translateY(-2px);
+        }
+
+        .coming-soon {
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
+            opacity: 0.8;
+        }
+
+        .coming-soon-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .game-card {
+                padding: 20px;
+            }
+            
+            .game-icon {
+                font-size: 3em;
+            }
+            
+            .game-title {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">OptiShots Games 🎮</h1>
+            <p class="subtitle">Fun, Educational Games for Kids & Families</p>
+        </div>
+
+        <div class="games-section">
+            <h2 class="section-title">🎯 Available Games</h2>
+            <div class="games-grid">
+                <a href="memory-verse-madness.html" class="game-card">
+                    <div class="game-icon">📖✨</div>
+                    <div class="game-title">Memory Verse Madness</div>
+                    <div class="game-description">
+                        Master Bible verses through fill-in-the-blank gameplay, then celebrate with an explosive emoji trophy hunt!
+                    </div>
+                    <ul class="game-features">
+                        <li>Multiple Bible Translations</li>
+                        <li>Emoji Escape Challenge!</li>
+                        <li>Sound Effects</li>
+                        <li>Mobile Friendly</li>
+                    </ul>
+                    <div class="play-btn">🎮 Play Now!</div>
+                </a>
+                
+                <div class="game-card coming-soon">
+                    <div class="coming-soon-icon">🔮</div>
+                    <div class="game-title">More Games Coming Soon!</div>
+                    <div class="game-description">
+                        We're working on exciting new educational games. Stay tuned for math adventures, word puzzles, and more!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🌟 <strong>OptiShots Games</strong> - Making Learning Fun Since 2025</p>
+            <p>Built with ❤️ for kids, families, and educators. Go King's!</p>
+        </div>
+    </div>
+</body>
+</html>
