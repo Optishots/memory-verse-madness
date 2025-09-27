@@ -887,6 +887,9 @@
                                 this.classList.add('clicked');
                                 popped++;
                                 
+                                // Ensure audio is initialized on mobile
+                                initAudioContext();
+                                
                                 // Play sound effect
                                 if (emojiData.emoji === '💩') {
                                     playFartSound();
@@ -955,16 +958,22 @@
             if (!audioContext) {
                 try {
                     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    
-                    // Resume context if suspended (required on mobile)
-                    if (audioContext.state === 'suspended') {
-                        audioContext.resume();
-                    }
                 } catch (error) {
                     console.warn('Audio not supported:', error);
                     audioContext = null;
+                    return null;
                 }
             }
+            
+            // Always try to resume context (required for mobile)
+            if (audioContext && audioContext.state === 'suspended') {
+                audioContext.resume().then(() => {
+                    console.log('Audio context resumed');
+                }).catch(err => {
+                    console.warn('Failed to resume audio context:', err);
+                });
+            }
+            
             return audioContext;
         }
 
@@ -1122,10 +1131,22 @@
             document.getElementById('errorState').style.display = 'none';
         }
 
+        // Add mobile audio unlock on any touch/click
+        function unlockAudioOnMobile() {
+            const ctx = initAudioContext();
+            if (ctx && ctx.state === 'suspended') {
+                ctx.resume();
+            }
+        }
+        
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             // Focus on first input
             document.getElementById('bookInput').focus();
+            
+            // Add mobile audio unlock listeners
+            document.addEventListener('touchstart', unlockAudioOnMobile, {once: true});
+            document.addEventListener('click', unlockAudioOnMobile, {once: true});
         });
     </script>
 </body>
